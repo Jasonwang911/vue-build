@@ -1,0 +1,106 @@
+//  mixin样式的封装
+/*
+*   向下和向上的箭头
+*/
+@mixin triangle-facing-right {  
+    display: inline-block;  
+    margin: 72px;  
+    border-right: 24px solid; border-bottom: 24px solid;  
+    width: 120px; height: 120px;  
+    transform: rotate(-45deg);  
+}  
+@mixin triangle-facing-left {  
+    display: inline-block;  
+    margin: 72px;  
+    border-left: 24px solid; border-bottom: 24px solid;  
+    width: 120px; height: 120px;  
+    transform: rotate(45deg);  
+} 
+/*
+*   超出不换行，省略号
+*/
+@mixin nowrap-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+/*
+*   flex 布局，父级设置display的兼容性前缀添加
+*/
+@mixin display-flex {
+    display: -webkit-box;   /* 老版本语法: Safari, iOS, Android browser, older WebKit browsers. */
+    display: -webkit-flex;  /* 新版本语法: Chrome 21+ */
+    display: -moz-box;      /* 老版本语法: Firefox (buggy) */
+    display: -ms-flexbox;   /* 混合版本语法: IE 10 */
+    display: flex;          /* 新版本语法: Opera 12.1, Firefox 22+ */
+}
+/*
+*   flex布局 justify-content: space-between;兼容性
+*/
+@mixin justify-content-space {
+    justify-content: space-between;
+    -webkit-justify-content: space-between;
+    -moz-justify-content: space-between;
+    -ms-justify-content: space-between;
+    -o-justify-content: space-between;
+}
+/*
+*   flex布局 justify-content: center;兼容性
+*/
+@mixin justify-content-center {
+    -webkit-justify-content: center;
+    -moz-justify-content: center;
+    -ms-justify-content: center;
+    -o-justify-content: center;
+    justify-content: center;
+}
+/*
+*   flex: 1; 兼容写法
+*/
+.flex1 {            
+    -webkit-flex: 1;        /* Chrome */  
+    -ms-flex: 1;            /* IE 10 */  
+    flex: 1;                /* NEW, Spec - Opera 12.1, Firefox 20+ */
+    -webkit-box-flex: 1;    /* OLD - iOS 6-, Safari 3.1-6 */  
+    -moz-box-flex: 1;       /* OLD - Firefox 19- */       
+}
+
+/*
+*   横向居中
+*/
+@mixin transform-translate-x{
+    transform: translateX(-50%);
+    -ms-transform: translateX(-50%);
+    -moz-transform: translateX(-50%);
+    -webkit-transform: translateX(-50%);
+    -o-transform: translateX(-50%);
+}
+/*
+*   纵向居中
+*/
+@mixin transform-translate-y{
+    transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -webkit-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+}
+/*
+*   垂直水平居中
+*/
+@mixin transform-translate-xy{
+    transform: translate(-50%,-50%);
+    -ms-transform: translate(-50%,-50%);
+    -moz-transform: translate(-50%,-50%);
+    -webkit-transform: translate(-50%,-50%);
+    -o-transform: translate(-50%,-50%);
+}
+/*
+*   设定标签多少行溢出隐藏替换省略号
+*/
+@mixin overflow-hidden-wrap($line){
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: $line;
+    overflow: hidden;
+}

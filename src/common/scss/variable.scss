@@ -1,0 +1,10 @@
+// 项目基本配色和共用样式的变量库
+// 命名规范请使用 color-样式名:样式值; 
+// 例如： 全局背景颜色
+$color-background: #ccc;
+$font-hot: rgb(178,47,36);   // 红色醒目字体颜色
+$font-white : #fff;
+$color-border-input: rgb(193,193,193);    // input 边框颜色
+$color-breadcrumb: rgb(233,233,233);
+$color-login-font : #999999;   //登录用浅色字体颜色
+$color-login-font-deep : #797979;   //登录用浅色字体颜色
